@@ -6,7 +6,7 @@
 
 ## Запуск
 
-### Сборка и запуск с Docker:
+## Сборка и запуск с Docker:
 
 ```bash
 docker build -t mailer-service .
