@@ -1,14 +1,12 @@
----
-
 # Mailer Service
 
 Простой сервис на FastAPI для отправки электронных писем через SMTP.
 
 ## Запуск
 
-## Сборка и запуск с Docker:
+### Сборка и запуск с Docker:
 
-```bash
+```
 docker build -t mailer-service .
 docker run -p 8000:8000 -e SMTP_HOST=your_smtp_server.com -e SMTP_PORT=587 -e SMTP_USER=your_email@example.com -e SMTP_PASSWORD=your_password mailer-service
 ```
@@ -19,7 +17,7 @@ docker run -p 8000:8000 -e SMTP_HOST=your_smtp_server.com -e SMTP_PORT=587 -e SM
 
   Тело запроса:
 
-  ```json
+  ```
   {
     "to": "recipient@example.com",
     "subject": "Your Subject Here",
@@ -29,7 +27,7 @@ docker run -p 8000:8000 -e SMTP_HOST=your_smtp_server.com -e SMTP_PORT=587 -e SM
 
   Ответ:
 
-  ```json
+  ```
   {
     "message": "Email sent successfully"
   }
@@ -39,7 +37,7 @@ docker run -p 8000:8000 -e SMTP_HOST=your_smtp_server.com -e SMTP_PORT=587 -e SM
 
 Для запуска тестов выполните:
 
-```bash
+```
 pytest app/tests/
 ```
 
@@ -47,7 +45,7 @@ pytest app/tests/
 
 ### EmailPayload
 
-Модель данных для отправки электронных писем.
+Модель данных для отправки электронных писем:
 
 - `to`: Адрес получателя. (Обязательное поле)
 - `subject`: Тема письма. (Обязательное поле)
@@ -56,6 +54,4 @@ pytest app/tests/
 ## Безопасность
 
 Учетные данные SMTP передаются через переменные окружения, что позволяет исключить их сохранение в коде и обеспечить большую безопасность.
-
----
 
